@@ -1,0 +1,131 @@
+/* Resetting margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set html and body to full height */
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Styling the background video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.158); /* Semi-transparent overlay */
+    z-index: 2; /* On top of the video */
+}
+
+.title-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-69%, -215%);
+    color: rgb(240, 240, 240);
+    text-align: center;
+    z-index: 3; /* On top of the overlay */
+    padding: 20px;
+}
+
+.title-container h1 {
+    font-size: 6.5em; /* Adjust size as needed */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    width: 1200px;
+    line-height: 1.2;
+    white-space: nowrap; /* Prevents text from wrapping */
+    background-color: #F5853F;
+    color: rgb(226, 203, 98);
+}
+
+.title-container h2 {
+    font-size: 2em; /* Adjust size as needed */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    width: 1050px;
+    line-height: 1.2;
+    background-color:#7C3626;
+    color: rgb(226, 203, 98);
+}
+
+.subtitle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, -10%);
+    text-align: center;
+    z-index: 3; /* On top of the overlay */
+    padding: 20px;
+}
+
+.subtitle-container h2 {
+    font-size: 2em;
+    background-color: #96969656;
+    color: rgb(255, 255, 255);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 770px;
+    padding: 8px;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 
+    0px 0px 15px rgba(255, 255, 255, 0.8);
+
+/* Optional: Center the text */
+text-align: center;
+}
+
+
+#dark-segment {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0px; /* Adjust the padding to position the arrow button */
+}
+
+#arrow-button {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 0; /* Align the button's left edge with the left edge of the dark segment */
+    transform: translate(-50%, -50%); /* Move the button leftward by 50% of its width and upward by 50% of its height */
+    background-color:  #F5853F; /* Transparent background */
+    border: 5px; /* Remove border */
+    border-radius: 54px;
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Pointer cursor */
+    transition: transform 0.2s;
+    width: 126px;
+    height: 126px;
+    z-index: 4;
+}
+
+#arrow-button img {
+    width: 126px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#arrow-button:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* Maintain the same offset and scale on hover */
+}
