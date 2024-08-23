@@ -61,6 +61,37 @@ body::before {
 }
 
 
+/* Navigation Button Styles */
+#recipe-generator-directory, #search-recipes-directory {
+    margin-left: 400px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+    color: #fff; /* White text color */
+    background-color: #ffad50; /* A vibrant coral color matching the site aesthetic */
+    border: none; /* Remove default borders */
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+#recipe-generator-directory:hover, #search-recipes-directory:hover {
+    background-color: #71a552; /* Darken background on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deepen shadow on hover */
+}
+
+#recipe-generator-directory:active, #search-recipes-directory:active {
+    transform: scale(0.98); /* Slightly shrink button on active press */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on press */
+}
+
+#recipe-generator-directory:focus, #search-recipes-directory:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(255, 165, 0, 0.4); /* Custom orange focus ring */
+}
+
+
 #main-content {
     display: flex;
     align-items: center;
@@ -210,7 +241,7 @@ body::before {
 
 }
 
-#ingredient {
+.ingredient {
     display: flex; /* Align input and button horizontally */
     align-items: center; /* Center align vertically */
     justify-content: space-between; /* Space between ingredient and button */
@@ -225,19 +256,19 @@ body::before {
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
 }
 
-#ingredient:hover {
+.ingredient:hover {
     background-color: rgba(255, 244, 196, 1); /* Slightly darker background on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
-#ingredient h3 {
+.ingredient h3 {
     margin: 0;
     font-family: "Poppins", sans-serif; /* Use the same font as the rest of the site */
     color: #333; /* Dark text color for contrast */
     flex-grow: 1; /* Allow the ingredient name to take up as much space as needed */
 }
 
-#ingredient button {
+.ingredient button {
     background-color: #F5853F; /* Button color matching the rest of the site */
     border: none; /* Remove default border */
     border-radius: 25px; /* Circular button */

@@ -19,6 +19,9 @@
         <div id="title-container">
             <h1 id="page-title">Smart Recipe Generator</h1>
         </div>
+
+        <button id="recipe-generator-directory">Find Your Recipes</button>
+        <button id="search-recipes-directory">Search Recipes</button>
     </div>
 </header>
 
@@ -41,26 +44,12 @@
         <div id="your-ingredients-container">
             <h2 id="ingredients-title">Your Ingredients</h2>
             <div id="ingredients-box">
-                <div id="ingredient"> <!-- Will be duplicated/ added at runtime-->
+
+                <div class="ingredient" style="display: none;"> <!-- Will be duplicated/ added at runtime-->
                     <h3>Chicken</h3>
                     <button>Delete</button>
                 </div>
-                <div id="ingredient">
-                    <h3>Chicken</h3>
-                    <button>Delete</button>
-                </div>
-                <div id="ingredient">
-                    <h3>Chicken</h3>
-                    <button>Delete</button>
-                </div>
-                <div id="ingredient">
-                    <h3>Chicken</h3>
-                    <button>Delete</button>
-                </div>
-                <div id="ingredient">
-                    <h3>Chicken</h3>
-                    <button>Delete</button>
-                </div>
+
                 
             </div>
             
@@ -101,6 +90,7 @@
 
 
 
-    <script src="js/generator-script.js"></script> <!-- Link to your JavaScript file -->
+    <script src="js/generator-script.js"></script> 
+    <script src="js/nav.js"></script> 
 </body>
 </html>
