@@ -18,25 +18,39 @@ function displayRecipeData(){
     document.getElementById("serving-number").textContent = (`Serves: ${recipeData.yield}`);
 
     //INGREDIENTS
-    const ingredientsList = document.getElementById("ingredients-list");
-    ingredientsList.innerHTML = ''; // Clear existing ingredients
 
-    recipeData.ingredients.forEach(ingredientObj => {
-        const newIngredient = document.createElement("li");
-        // You can display the full text description of the ingredient
-        newIngredient.textContent = `${ingredientObj.quantity || ''} ${ingredientObj.measure || ''} ${ingredientObj.food}`;
-        ingredientsList.appendChild(newIngredient);
+    // Split the string based on commas that are not followed by a space
+    let parts = recipeData.ingredientLines.split(/,(?!\s)/);
+    let ingredientsArray = [];
+    let currentIngredient = "";
+
+// Process each part to handle commas followed by a space
+    parts.forEach(part => {
+        part = part.trim(); // Remove any extra whitespace
+
+        if (currentIngredient) {
+            if (part.length > 0 && !part.startsWith(" ")) {
+                ingredientsArray.push(currentIngredient.trim());
+                currentIngredient = part;
+            } else {
+                currentIngredient += ", " + part;
+            }
+        } else {
+            currentIngredient = part;
+        }
     });
 
-    //INSTRUCTIONS
-    const instructionsList = document.getElementById("instructions-list");
-    instructionsList.innerHTML = ''; // Clear existing ingredients
 
-    recipeData.instructions.forEach(instruction => {
-        const newInstruction = document.createElement("li");
-        // You can display the full text description of the ingredient
-        newInstruction.textContent = instruction;
-        instructionsList.appendChild(newInstruction);
+    if (currentIngredient) {
+        ingredientsArray.push(currentIngredient.trim());
+    }
+
+        const ingredientsList = document.getElementById('ingredients-list');
+
+        ingredientsArray.forEach(ingredient => {
+            const newIngredient = document.createElement("li");
+            newIngredient.textContent = ingredient;
+            ingredientsList.appendChild(newIngredient);
     });
 }
 

@@ -17,16 +17,16 @@ app.use(express.static('public'));
 
 // Define the endpoint
 app.post('/api/ingredients', async (req, res) => {
-    const ingredients = req.body.ingredients;
+    const myIngredients = req.body.ingredients;
 
     // Validate and process the data
-    if (!Array.isArray(ingredients)) {
+    if (!Array.isArray(myIngredients)) {
         return res.status(400).json({ error: 'Invalid ingredients data' });
     }
 
     //const ingredientsSearch = ingredients.join(','); // Replace with your ingredients
 
-    const ingredientsSearch = ingredients.join(","); // Replace with your ingredients
+    const ingredientsSearch = myIngredients.join(","); // Replace with your ingredients
     const EDAMAMurl = `https://api.edamam.com/search?q=${ingredientsSearch}&app_id=${appId}&app_key=${appKey}`;
 
     try {

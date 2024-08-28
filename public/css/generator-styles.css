@@ -344,13 +344,14 @@ body::before {
 }
 
 #recipe-name {
-    font-size: 1.8em;
+    font-size: 2em;
     position: relative;
-    top: -20px;
-    left: 300px;
-    margin-bottom: 10px;
+    top: -5px;
+    left: 75px;
+    margin-bottom: 0px;
     color: #F5853F; /* Match the header color */
     font-weight: bold; /* Bold text for emphasis */
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 #recipe-description {
@@ -377,14 +378,14 @@ body::before {
     border-radius: 25px; /* Circular button */
     color: white; /* White text */
     font-size: 1.2em; /* Size consistent with ingredient text */
-    width: 140px;
-    height: 35px;
+    width: 350px;
+    height: 50px;
     cursor: pointer; /* Pointer cursor on hover */
     display: flex;
     align-items: center;
     justify-content: center; /* Center icon within the button */
     transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
-    margin-left: 810px;
+    margin-left: 230px;
 }
 
 #see-recipe-button:hover {
@@ -403,7 +404,7 @@ body::before {
     background-color: #F5853F; /* Match the button color */
     color: white; /* White text for contrast */
     padding: 5px 15px;
-    
+    margin: 20px 320px;
     align-self: flex-start;
     font-weight: bold; /* Bold text for emphasis */
 }

@@ -85,6 +85,8 @@ function displayRecipes(data) {
 
         newRecipe.querySelector('h3').textContent = recipe.label;
 
+        newRecipe.querySelector('#serves').textContent = (`Serves: ${recipe.yield}`);
+
         // Append the new recipe to the recipes box
         recipesContainer.appendChild(newRecipe);
 
